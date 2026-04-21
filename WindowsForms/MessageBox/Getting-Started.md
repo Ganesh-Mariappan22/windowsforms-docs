@@ -30,6 +30,7 @@ You can create the Windows Forms application with MessageBoxAdv as follows:
 
 Create a new Windows Forms project in the Visual Studio to display the MessageBoxAdv.
 
+
 ## Configure MessageBoxAdv
 
 To add control manually in C#, follow the given steps:
@@ -84,31 +85,59 @@ MessageBoxAdv.Show(this,"Save changes?", "File Modified", MessageBoxButtons.YesN
 
 ![MessageBoxAdv in windows forms messagebox](MessageBoxAdv_images/MessageBoxAdv_img32.png)
 
-This short guide helps you get a MessageBoxAdv dialog running quickly in a Windows Forms app, and points to more detailed topics (buttons, styling, localization, and advanced usage) elsewhere in this collection.
+## Appearance of MessageBoxAdv
 
-## Prerequisites
+The appearance of the MessageBoxAdv can be customized by using the following properties of the MetroStyleColorTable.
 
-- A Windows Forms project in Visual Studio (targeting a compatible .NET runtime).
-- Reference the Syncfusion assemblies or NuGet packages required for MessageBoxAdv (see the project or product installation docs). For a quick check, ensure you have `Syncfusion.Shared.Base.dll` or the equivalent NuGet package referenced in your project.
+* AbortButtonBackColor
+* CancelButtonBackColor
+* IgnoreButtonBackColor
+* NoButtonBackColor
+* OKButtonBackColor
+* RetryButtonBackColor
+* YesButtonBackColor
+* CaptionBarColor
+* CaptionForeColor
+* ForeColor
+* BackColor
+* BorderColor
 
-## Where to go next (concise references)
+{% tabs %}
 
-- Buttons and return values: see the focused reference in [Button Parameters](https://help.syncfusion.com/windowsforms/messagebox/button-parameters) for the available `MessageBoxButtons` combinations, examples, and images.
-- Styling and themes: learn how to change the visual style and customize colors in [Styles Settings](https://help.syncfusion.com/windowsforms/messagebox/styles-settings).
-- Localization: if your app needs translated button text or captions, follow the step-by-step guide in [Localization](https://help.syncfusion.com/windowsforms/messagebox/localization).
-- Overview and advanced features: read [Overview](https://help.syncfusion.com/windowsforms/messagebox/overview) for feature highlights such as details view, resizing, icons, and RTL support.
+{% highlight C# %}
 
-## Tips and common tasks (brief)
+//MetroColor table for MessageBoxAdv
+MetroStyleColorTable metroColorTable = new MetroStyleColorTable();
+//Sets the NoButton backColor
+metroColorTable.NoButtonBackColor = Color.Red;
+//Sets the YesButton backColor
+metroColorTable.YesButtonBackColor = Color.SkyBlue;
+//Sets the OK button backcolor
+metroColorTable.OKButtonBackColor = Color.Green;
+//Applies the MetroStyleColorTable to MessageBoxAdv
+MessageBoxAdv.MetroColorTable = metroColorTable;
+//Sets the MessageBoxStyle as Metro
+MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro;
 
-- Displaying an icon: pass `MessageBoxIcon` to the `Show` call (see icon options in the Buttons doc).
-- Details/extended text: MessageBoxAdv supports an optional details pane — see the Overview for illustrative usage.
-- Resizing: enable `CanResize` if you want end-users to resize the dialog.
+{% endhighlight %}
 
-## Troubleshooting
+{% highlight VB %}
 
-- If `MessageBoxAdv` doesn't appear, confirm the Syncfusion assemblies/packages are referenced and that the correct `using Syncfusion.Windows.Forms;` (or `Imports`) line is included.
-- For unexpected button captions or languages, check the localization provider setup described in [Localization](https://help.syncfusion.com/windowsforms/messagebox/localization).
+'MetroColor table for MessageBoxAdv
+Dim metroColorTable As New MetroStyleColorTable()
+'Sets the NoButton backColor
+metroColorTable.NoButtonBackColor = Color.Red
+'Sets the YesButton backColor
+metroColorTable.YesButtonBackColor = Color.SkyBlue
+'Sets the OK button backcolor
+metroColorTable.OKButtonBackColor = Color.Green
+'Applies the MetroStyleColorTable to MessageBoxAdv
+MessageBoxAdv.MetroColorTable = metroColorTable
+'Sets the MessageBoxStyle as Metro
+MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
 
-## Summary
+{% endhighlight %}
 
-This page provides a concise quick start to get `MessageBoxAdv` displayed in your app and points you to the specialized pages in this folder for deeper examples and configuration. 
+{% endtabs %}
+
+![WindowsForms MessageBoxAdv Appearance](MessageBoxAdv_images/MessageBoxAdv_appearance.png) 
